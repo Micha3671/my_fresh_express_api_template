@@ -63,6 +63,11 @@ TodosRouter.get("/byuserid", (req, res) => {
   // res.status(StatusCodes.OK).send(JSON.stringify(userTodos)); //alternativ
 });
 
+// GET Alle Todos
+TodosRouter.get("/all", (req, res) => {
+  res.status(StatusCodes.OK).send(todos);
+});
+
 // PUT REQUESTS
 TodosRouter.put("/mark", (req, res) => {
   res.status(StatusCodes.OK).send("Todo als erledeigt markieren");
