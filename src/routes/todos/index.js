@@ -71,7 +71,10 @@ TodosRouter.get("/all", (req, res) => {
 
 // PUT REQUESTS
 TodosRouter.put("/mark", (req, res) => {
-  res.status(StatusCodes.OK).send("Todo als erledeigt markieren");
+  const { id, isDone } = req.body;
+  // const id = req.body.id;
+  // const isDone = req.body.isDone;
+  res.status(StatusCodes.OK).json({ id, isDone });
 });
 TodosRouter.put("/update", (req, res) => {
   res.status(StatusCodes.OK).send("Todo aktuallisieren");
